@@ -3,6 +3,7 @@
 # DevDocs AI — Codebase RAG Assistant
 
 A production-quality **Retrieval-Augmented Generation** system for querying codebases with natural language. Upload any ZIP archive, index it once, and ask questions about the code.
+![alt text](<Screenshot 2026-03-28 113637.png>)
 
 ## Architecture
 
@@ -36,6 +37,7 @@ User Query
 | Query rewriting (LLM)| ~$0.00005 / query|
 
 > At $5 budget you can run ~25,000 queries with full evaluation enabled.
+
 
 ## Project Structure
 
@@ -125,7 +127,7 @@ Open **http://localhost:7860** in your browser.
 ## Usage Guide
 
 ### Tab 1 — Index Repository
-
+![alt text](<Screenshot 2026-03-28 113623.png>)
 1. Click **Upload ZIP file** and select your repository archive.
 2. Click **🚀 Index Repository**.
 3. Wait for the status message — indexing is one-time per repository.
@@ -142,11 +144,13 @@ Open **http://localhost:7860** in your browser.
    - **Run evaluation**: computes all metrics (costs 1 extra LLM call)
 3. Click **🔍 Ask**.
 4. View the **Answer**, **Retrieved Chunks**, and **Metrics Panel**.
+ ![alt text](<Screenshot 2026-03-28 113637.png>)
+ ![alt text](<Screenshot 2026-03-28 113643.png>) 
 
 ### Tab 3 — Compare Modes
 
 Run both **Similarity** and **MMR** retrieval side-by-side for the same question to compare answer quality and chunk diversity.
-
+ ![alt text](<Screenshot 2026-03-28 113924.png>) 
 ---
 
 ## Configuration Reference
@@ -191,7 +195,7 @@ All parameters are in `config.py`:
 | Overall       | Mean of the four scores                           | 1–5   |
 
 ---
-
+![alt text](<Screenshot 2026-03-28 113804.png>) 
 ## Supported File Types
 
 `.py` `.js` `.ts` `.jsx` `.tsx` `.md` `.txt` `.java` `.go` `.rs` `.cpp` `.c` `.h`
