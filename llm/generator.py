@@ -11,7 +11,7 @@ The prompt is designed to:
 import logging
 from typing import List, Tuple
 
-from langchain.schema import Document
+from langchain_core.documents import Document
 import litellm
 
 from config import LLM_MODEL, LLM_MAX_TOKENS, LLM_TEMPERATURE, OPENAI_API_KEY
@@ -94,8 +94,7 @@ def generate_answer(
                 {"role": "user", "content": user_message},
             ],
             max_tokens=LLM_MAX_TOKENS,
-            temperature=LLM_TEMPERATURE,
-            api_key=OPENAI_API_KEY,
+            temperature=LLM_TEMPERATURE
         )
         answer = response.choices[0].message.content.strip()
         logger.info(f"Generated answer ({len(answer)} chars) for: '{query[:60]}'")

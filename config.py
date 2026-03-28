@@ -5,7 +5,7 @@ All tuneable parameters live here so the rest of the codebase imports from one p
 
 import os
 from pathlib import Path
-
+from dotenv import load_dotenv  
 # ─── Paths ────────────────────────────────────────────────────────────────────
 BASE_DIR = Path(__file__).parent
 DATA_DIR = BASE_DIR / "data"
@@ -17,7 +17,32 @@ VECTOR_DB_DIR.mkdir(parents=True, exist_ok=True)
 UPLOAD_DIR.mkdir(parents=True, exist_ok=True)
 
 # ─── Ingestion ────────────────────────────────────────────────────────────────
-ALLOWED_EXTENSIONS = {".py", ".js", ".ts", ".jsx", ".tsx", ".md", ".txt", ".java", ".go", ".rs", ".cpp", ".c", ".h"}
+ALLOWED_EXTENSIONS = {
+    # Python
+    ".py",
+    # JavaScript / TypeScript
+    ".js", ".ts", ".jsx", ".tsx", ".mjs", ".cjs",
+    # PHP
+    ".php", ".php3", ".php4", ".php5", ".phtml",
+    # Java / Kotlin
+    ".java", ".kt", ".kts",
+    # C / C++
+    ".c", ".cpp", ".h", ".hpp", ".cc",
+    # Systems
+    ".go", ".rs",
+    # Ruby
+    ".rb", ".rake",
+    # C# / .NET
+    ".cs",
+    # Shell
+    ".sh", ".bash", ".zsh",
+    # Docs / Config
+    ".md", ".txt", ".yaml", ".yml", ".toml", ".json",
+    # HTML / CSS (if you want frontend code)
+    ".html", ".css", ".scss",
+    # SQL
+    ".sql",
+}
 MAX_FILE_SIZE_MB = 2  # skip files larger than this
 
 # ─── Chunking ─────────────────────────────────────────────────────────────────
@@ -43,7 +68,7 @@ MMR_LAMBDA_MULT = 0.5                # diversity vs relevance balance
 LLM_MODEL = "openai/gpt-4.1-nano"   # via litellm
 LLM_MAX_TOKENS = 1024
 LLM_TEMPERATURE = 0.1
-OPENAI_API_KEY = os.getenv("OPENAI_API_KEY", "")
+OPENAI_API_KEY = load_dotenv(dotenv_path=Path(__file__).parent / ".env")
 
 # ─── Evaluation ───────────────────────────────────────────────────────────────
 JUDGE_MODEL = "openai/gpt-4.1-nano"

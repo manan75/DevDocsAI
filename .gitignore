@@ -1,3 +1,23 @@
-.venv
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+venv/
+.venv/
+*.egg-info/
 
+# Environment
 .env
+
+# Data (generated at runtime)
+data/uploads/
+data/vector_db/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db

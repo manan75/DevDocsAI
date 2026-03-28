@@ -9,9 +9,9 @@ unless the collection is explicitly cleared.
 import logging
 from typing import List
 
-from langchain.schema import Document
-from langchain_community.vectorstores import Chroma
-from langchain_community.embeddings import HuggingFaceEmbeddings
+from langchain_core.documents import Document
+from langchain_chroma import Chroma
+from langchain_huggingface import HuggingFaceEmbeddings
 
 from config import VECTOR_DB_DIR, EMBEDDING_MODEL, EMBEDDING_DEVICE, CHROMA_COLLECTION_NAME
 

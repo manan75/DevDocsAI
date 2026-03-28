@@ -7,7 +7,7 @@ import sys
 from pathlib import Path
 from typing import List
 
-from langchain.schema import Document
+from langchain_core.documents import Document
 
 
 def setup_logging(level: int = logging.INFO) -> None:

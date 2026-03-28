@@ -99,8 +99,8 @@ def judge_answer(
                 {"role": "user", "content": user_msg},
             ],
             max_tokens=200,
-            temperature=0.0,
-            api_key=OPENAI_API_KEY,
+            temperature=0.0
+          
         )
         raw = response.choices[0].message.content.strip()
 
