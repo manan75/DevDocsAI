@@ -1,5 +1,6 @@
 # DevDocsAI
 
+Deployed on Hugging Face: https://huggingface.co/spaces/boy177/DevDocs
 # DevDocs AI — Codebase RAG Assistant
 
 A production-quality **Retrieval-Augmented Generation** system for querying codebases with natural language. Upload any ZIP archive, index it once, and ask questions about the code.
